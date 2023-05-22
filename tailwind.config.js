@@ -2,6 +2,7 @@ import defaultTheme from 'tailwindcss/defaultTheme';
 import forms from '@tailwindcss/forms';
 import typography from '@tailwindcss/typography';
 
+
 /** @type {import('tailwindcss').Config} */
 export default {
     content: [
@@ -15,6 +16,9 @@ export default {
         extend: {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                jolly: ['Jolly Lodger', 'cursive'],
+                Potta: ['Potta One', 'cursive'],
+
             },
         },
     },
