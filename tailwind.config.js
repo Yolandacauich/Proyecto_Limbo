@@ -27,6 +27,8 @@ export default {
                 'white': '#ffffff',
                 'black': '000000',
                 'hoversec': '#A6A6A6',
+                'colorter':'#87888A',
+                'colorpru': '#b91c1c',
             }
 
 

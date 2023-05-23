@@ -7,16 +7,16 @@
             <x-authentication-card-logo />
         </x-slot>
 
-        <x-validation-errors class="mb-4" />
+        <x-validation-errors class="mb-4 border-black" />
 
         <form method="POST" action="{{ route('register') }}">
             @csrf
 
-            <div>
-                <x-input id="name" class="border-black block mt-1 w-full" placeholder="NOMBRE Y APELLIDOS" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+            <div class="">
+                <x-input id="name" class="block mt-1 w-full" placeholder="NOMBRE Y APELLIDOS" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             </div>
             
-            <div class="mt-4">
+            <div class="mt-4 ">
             <x-input id="name" class="border-black block mt-1 w-full" placeholder="NOMBRE DE USUARIO" type="text" name="name user" :value="old('name')" required autofocus autocomplete="name user" />
             </div>
 
@@ -56,8 +56,8 @@
                 </div>
             @endif
 
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
+            <div class="flex items-center justify-end mt-4 font-jolly">
+                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-colorter" href="{{ route('login') }}">
                     {{ __('¿YA ESTAS REGISTRADO?') }}
                 </a>
 
