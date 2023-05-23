@@ -20,8 +20,19 @@ export default {
                 Potta: ['Potta One', 'cursive'],
 
             },
+
         },
+            colors: {
+                'hoverpri': '#292929',
+                'white': '#ffffff',
+                'black': '000000',
+                'hoversec': '#A6A6A6',
+            }
+
+
     },
+
+
 
     plugins: [forms, typography],
 };
