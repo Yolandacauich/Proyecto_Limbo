@@ -1,5 +1,9 @@
 @vite(['resources/css/app.css', 'resources/js/app.js'])
 <x-guest-layout>
+
+    <div class="text-center text-black font-Potta text-3xl">
+        <h1>LIMBO</h1>
+    </div>
     <x-authentication-card>
 
 
