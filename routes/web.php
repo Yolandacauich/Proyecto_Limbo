@@ -7,6 +7,7 @@ use App\Http\Controllers\Mapatroller;
 use App\Http\Controllers\OtrosController;
 use App\Http\Controllers\OvnisController;
 use App\Http\Controllers\ParanormalController;
+use App\Http\Controllers\PublicarController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -84,4 +85,14 @@ Route::middleware([
     Route::get('/paranormal', function () {
         return view('paranormal');
     })->name('paranormal');
+});
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/publicar', function () {
+        return view('publicar');
+    })->name('publicar');
 });
