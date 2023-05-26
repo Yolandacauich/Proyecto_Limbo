@@ -10,7 +10,6 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Jolly+Lodger&display=swap" rel="stylesheet"> 
-        <link rel="stylesheet" href="{{ asset('resurces/css/app.css') }}">
 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <!-- Styles -->
@@ -19,30 +18,30 @@
         </style>
        
     </head>
-    <body class="antialiased bg-cover bg-center font-jolly" style="background-image: url('{{asset('images/blackhole.webp')}}');">
-    
-    <div class="relative min-h-screen bg-dots-darker bg-center selection:bg-hoverpri selection:text-white">
+    <body class="antialiased bg-cover bg-center font-jolly " style="background-image: url('{{asset('images/blackhole.webp')}}');">
+    <div class="relative min-h-screen bg-dots-darker bg-center selection:bg-hoverpri selection:text-black">
     <div class="text-center text-white pt-44 font-jolly text-3xl">
-
-
             <p>BIENVENIDO AL LADO OSCURO DE LA IMAGINACIÓN</p>
             </div>   
             @if (Route::has('login'))
                 <div class="sm:fixed sm:top-0 sm:right-0 text-right  w-full bg-white">
                     @auth
-                        <a href="{{ url('/dashboard') }}" class="font-semibold text-base text-gray-600 mr-12 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-hoverpri">Dashboard</a>
+                        <a href="{{ url('/dashboard') }}" class="font-semibold text-base text-gray-600 mr-12 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-hoverpri">LIMBO</a>
                     @else
                         <a href="{{ route('login') }}" class="font-semibold text-base text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-hoverpri">INICIAR SESION</a>
 
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}" class="ml-4 mr-4  text-base font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-hoverpri">REGISTRARTE</a>
 
-                        @endif 
+                            @endif
                     @endauth
                 </div>
             @endif
 
-            
+        </div>
+        <div style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);">
+                <img src="{{'images/ojos.gif' }}" alt="Imagen" class= 'w-26 h-10'>
         </div>
     </body>
 </html>
+

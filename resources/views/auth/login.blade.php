@@ -1,8 +1,15 @@
 @vite(['resources/css/app.css', 'resources/js/app.js'])
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <title>LIMBO</title>
+    </head>
 <x-guest-layout>
 
-    <div class="text-center text-black font-Potta text-3xl">
-        <h1>LIMBO</h1>
+    <div class="text-center text-white font-Potta text-3xl">
+        <div style="position: absolute; left: 50%; transform: translateX(-50%);">
+                <img src="{{'images/LIMBO_1.png' }}" alt="Imagen" class= 'w-80 h-80'>
+        </div>
     </div>
     <x-authentication-card>
 
@@ -59,3 +66,4 @@
         </form>
     </x-authentication-card>
 </x-guest-layout>
+</html>
