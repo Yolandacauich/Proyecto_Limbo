@@ -22,6 +22,7 @@
 
             <div class="font-jolly text-2xl content-center">
                 <div class="font-jolly">
+                <img src="{{'images/ss.gif' }}" alt="Imagen" class= 'w-26 h-12'>
                     <x-label for="email" value="{{ __('Email') }}" />
                     <x-input id="email" class="block mt-1 w-full" type="email" name="email" placeholder="USUARIO" :value="old('email')" required autofocus autocomplete="username" />
                 </div>

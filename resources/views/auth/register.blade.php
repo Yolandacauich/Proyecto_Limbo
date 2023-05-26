@@ -1,5 +1,6 @@
 <x-guest-layout>
-    <div class="text-center text-black font-Potta text-3xl">
+<body class="antialiased bg-cover bg-center font-jolly " style="background-image: url('{{asset('images/ojos-2.gif')}}');">
+    <div class="text-center text-white font-Potta text-3xl">
         <h1>LIMBO</h1>
     </div>
     <x-authentication-card>
@@ -7,36 +8,36 @@
             <x-authentication-card-logo />
         </x-slot>
 
-        <x-validation-errors class="mb-4 border-black" />
+        <x-validation-errors class="mb-4 border-black bg-black" />
 
         <form method="POST" action="{{ route('register') }}">
             @csrf
 
             <div class="">
-                <x-input id="name" class="block mt-1 w-full" placeholder="NOMBRE Y APELLIDOS" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+                <x-input id="name" class="block mt-1 w-full border-black" placeholder="NOMBRE Y APELLIDOS" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             </div>
             
             <div class="mt-4 ">
-            <x-input id="name" class="border-black block mt-1 w-full" placeholder="NOMBRE DE USUARIO" type="text" name="name user" :value="old('name')" required autofocus autocomplete="name user" />
+            <x-input id="name" class="block mt-1 w-full" placeholder="NOMBRE DE USUARIO" type="text" name="name user" :value="old('name')" required autofocus autocomplete="name user" />
             </div>
 
             <div class="mt-4">
-            <x-input id="name" class="border-black block mt-1 w-full" placeholder="FECHA DE NACIMIENTO" type="text" name="date" :value="old('name')" required autofocus autocomplete="date" />
-            </div>
-
-            <div class="mt-4">
-
-                <x-input id="email" class="border-black block mt-1 w-full" placeholder="CORREO" type="email" name="email" :value="old('email')" required autocomplete="username" />
+            <x-input id="name" class="block mt-1 w-full" placeholder="FECHA DE NACIMIENTO" type="text" name="date" :value="old('name')" required autofocus autocomplete="date" />
             </div>
 
             <div class="mt-4">
 
-                <x-input id="password" class="border-black block mt-1 w-full" placeholder="CONTRASEÑA" type="password" name="password" required autocomplete="new-password" />
+                <x-input id="email" class="block mt-1 w-full" placeholder="CORREO" type="email" name="email" :value="old('email')" required autocomplete="username" />
+            </div>
+
+            <div class="mt-4">
+
+                <x-input id="password" class="block mt-1 w-full" placeholder="CONTRASEÑA" type="password" name="password" required autocomplete="new-password" />
             </div>
 
             <div class="mt-4">
   
-                <x-input id="password_confirmation" class="border-black block mt-1 w-full" placeholder="CONFIRMAR CONTRASEÑA" type="password" name="password_confirmation" required autocomplete="new-password" />
+                <x-input id="password_confirmation" class="block mt-1 w-full" placeholder="CONFIRMAR CONTRASEÑA" type="password" name="password_confirmation" required autocomplete="new-password" />
             </div>
 
             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
@@ -57,14 +58,15 @@
             @endif
 
             <div class="flex items-center justify-end mt-4 font-jolly">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-colorter" href="{{ route('login') }}">
+                <a class="underline text-sm text-white hover:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-colorter" href="{{ route('login') }}">
                     {{ __('¿YA ESTAS REGISTRADO?') }}
                 </a>
 
                 <x-button class="ml-4">
-                    {{ __('Register') }}
+                    {{ __('REGISTARTE') }}
                 </x-button>
             </div>
         </form>
     </x-authentication-card>
+</body>
 </x-guest-layout>
