@@ -25,7 +25,7 @@
 
         <meta http-equiv="refresh" content="5;url={{ url('/princi') }}">
 
-        <!-- Styles agregado -->
+        
        
     </head>
     <body class="antialiased bg-cover bg-center font-jolly " style="background-image: url('{{asset('images/blackhole.webp')}}');">
