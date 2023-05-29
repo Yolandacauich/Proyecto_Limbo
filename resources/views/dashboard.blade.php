@@ -4,13 +4,11 @@
         <title>LIMBO</title>
     </head>
     <x-app-layout>
-        <x-slot name="header">
-            <h2 class="animated-text font-jolly text-xl text-black">
-                {{ __('MAS POPULARES...') }}
-            </h2>
-
-        </x-slot>
-            <div class="grid grid-cols-3 space-x-5 items-center px-32 py-32">
+        <body class="antialiased bg-cover bg-center font-jolly " style="background-image: url('{{asset('images/xx.jpg')}}');">
+            <div class="animated-text font-jolly items-start text-black pt-14 pl-8 font-jolly text-3xl ">
+              <h1>MÁS POPULARES...</h1>
+            </div> 
+             <div class="grid grid-cols-3 space-x-5 items-center px-32 py-8">
                 <x-card>
                     <p>esta es la info</p>
                 </x-card>
@@ -26,5 +24,6 @@
                 {{ __('¿QUIERES PUBLICAR?') }}
             </a>
         </div>
+</body>
     </x-app-layout>
 </html>

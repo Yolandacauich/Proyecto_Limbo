@@ -42,7 +42,7 @@
 
                         @if (Route::has('register'))
 
-                            <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">REGISTRARTE</a>
+                            <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:hoverpri">REGISTRARTE</a>
 
 
                             @endif
@@ -52,7 +52,7 @@
 
         </div>
         <div style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);">
-                <img src="{{'images/ojos.gif' }}" alt="Imagen" class= 'w-26 h-10'>
+                <img src="{{'images/ojos.gif' }}" alt="Imagen" class= 'w-64 h-10'>
         </div>
     </body>
 </html>

@@ -9,40 +9,34 @@
                         <img src="{{'images/boceto1 1.png' }}" alt="Imagen" >
                     </a>
                 </div>
+
                 <!-- Navigation Links -->
-
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')" class="focus:outline-colorter hover:bg-colorter">
-                        {{ __('POPULARES') }}
-                    </x-nav-link>
-                </div>
-
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link href="{{ route('paranormal') }}" :active="request()->routeIs('paranormal')" class="focus:outline-colorter hover:bg-colorter">
+                    <x-nav-link href="{{ route('paranormal') }}" :active="request()->routeIs('paranormal')" class="focus:outline-colorter">
                         {{ __('PARANORMAL') }}
                     </x-nav-link>
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link href="{{ route('ovnis') }}" :active="request()->routeIs('ovnis')" class="focus:outline-colorter hover:bg-colorter">
+                    <x-nav-link href="{{ route('ovnis') }}" :active="request()->routeIs('ovnis')" class="focus:outline-colorter">
                         {{ __('OVNIS') }}
                     </x-nav-link>
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link href="{{ route('creyentes') }}" :active="request()->routeIs('creyentes')" class="focus:outline-colorter hover:bg-colorter">
+                    <x-nav-link href="{{ route('creyentes') }}" :active="request()->routeIs('creyentes')" class="focus:outline-colorter focus:text-hoverpri">
                         {{ __('CREYENTES') }}
                     </x-nav-link>
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link href="{{ route('mapa') }}" :active="request()->routeIs('mapa')" class="focus:outline-colorter hover:bg-colorter">
+                    <x-nav-link href="{{ route('mapa') }}" :active="request()->routeIs('mapa')" class="focus:outline-colorter">
                         {{ __('REGIONAL') }}
                     </x-nav-link>
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link href="{{ route('otros') }}" :active="request()->routeIs('otros')" class="focus:outline-colorter hover:bg-colorter">
+                    <x-nav-link href="{{ route('otros') }}" :active="request()->routeIs('otros')" class="focus:outline-colorter">
                         {{ __('OTROS') }}
                     </x-nav-link>
                 </div>
