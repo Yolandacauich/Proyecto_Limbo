@@ -9,6 +9,6 @@ class OvnisController extends Controller
 {
     public function index()
     {
-        return view ('otros');
+        return view ('lugares');
     }
 }

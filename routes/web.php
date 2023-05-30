@@ -5,9 +5,11 @@ use App\Http\Controllers\PrinciController;
 use App\Http\Controllers\CreyentesController;
 use App\Http\Controllers\Mapatroller;
 use App\Http\Controllers\OtrosController;
-use App\Http\Controllers\OvnisController;
+use App\Http\Controllers\LugaresController;
 use App\Http\Controllers\ParanormalController;
 use App\Http\Controllers\PublicarController;
+use App\Models\Historia;
+use App\Models\Comentario;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,6 +38,15 @@ Route::middleware([
 Route::get('/princi', function () {
     return view('princi');
 });
+
+Route::get('/historia/{id}', function ($id) {
+    // Lógica para obtener la historia correspondiente al ID y pasarla a la vista
+    $historia = App\Models\Historia::findOrFail($id);
+
+    return view('livewire.historia-individual', compact('historia'));
+});
+
+
 
 Route::middleware([
     'auth:sanctum',
@@ -72,9 +83,9 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/ovnis', function () {
-        return view('ovnis');
-    })->name('ovnis');
+    Route::get('/lugares', function () {
+        return view('lugares');
+    })->name('lugares');
 });
 
 Route::middleware([

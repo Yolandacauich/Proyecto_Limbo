@@ -24,8 +24,8 @@
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link href="{{ route('ovnis') }}" :active="request()->routeIs('ovnis')" class="focus:outline-colorter hover:bg-colorter">
-                        {{ __('OVNIS') }}
+                    <x-nav-link href="{{ route('lugares') }}" :active="request()->routeIs('lugares')" class="focus:outline-colorter hover:bg-colorter">
+                        {{ __('LUGARES EMBRUJADOS') }}
                     </x-nav-link>
                 </div>
 

@@ -5,7 +5,7 @@
     </head>
     <x-app-layout>
         <body class="antialiased bg-cover bg-center font-jolly " style="background-image: url('{{asset('images/xx.jpg')}}');">
-            <div class="animated-text font-jolly items-start text-black pt-14 pl-8 font-jolly text-3xl ">
+            <div class="animated-text items-start text-black pt-14 pl-8 font-jolly text-3xl ">
               <h1>MÁS POPULARES...</h1>
             </div> 
              <div class="grid grid-cols-3 space-x-5 items-center px-32 py-8">

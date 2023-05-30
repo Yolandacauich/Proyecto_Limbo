@@ -5,4 +5,5 @@
     <div class="card-body space-x-5 px-2">
         {{ $slot }}
     </div>
+    <livewire:card-ver />
 </div>
