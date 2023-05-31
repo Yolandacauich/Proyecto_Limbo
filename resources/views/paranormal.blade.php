@@ -2,6 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <title>LIMBO</title>
+        @livewireStyles
     </head>
     <x-guest-layout>
     <x-navigation-menu>
@@ -11,13 +12,14 @@
                 <h1>HISTORIAS PARANORMALES...</h1>
 
         </div> 
-        <livewire:card-ver />
+        @livewire('card-ver')
 
         <div class="fixed bottom-4 right-4 flex justify-end pb-8">
             <a class="underline font-jolly text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-colorter" href="{{ route('publicar') }}">
                 {{ __('¿QUIERES PUBLICAR?') }}
             </a>
         </div>
+        @livewireScripts
     </body>
     </x-guest-layout> 
     

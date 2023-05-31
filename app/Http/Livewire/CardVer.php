@@ -35,13 +35,12 @@ class CardVer extends Component
         $this->visiblehistorias = $this->historias->slice($this->currentIndex, $this->itemsToShow);
     }
 
-    public function render()
-    {
-        return view('livewire.card-ver');
-    }
-
     public function irAPaginaHistoria($Idhistoria)
     {
         return redirect()->to('/historia/' . $Idhistoria);
+    }
+    public function render()
+    {
+        return view('livewire.card-ver');
     }
 }

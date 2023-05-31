@@ -10,11 +10,11 @@ class Comentario extends Model
     use HasFactory;
 
     public function historias() {
-        return $this->belongsTo(historia::class,'id_historia');
+        return $this->belongsTo(historia::class);
     }
 
     public function users() {
-        return $this->belongsTo(User::class,'id_user');
+        return $this->belongsTo(User::class,'user_id');
     }
 
           /**
@@ -24,8 +24,8 @@ class Comentario extends Model
      */
     protected $fillable = [
         'comentario',
-        'id_historia',
-        'id_user'
+        'historia_id',
+        'user_id'
 
 
 ];

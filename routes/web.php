@@ -11,6 +11,8 @@ use App\Http\Controllers\PublicarController;
 use App\Http\Controllers\HistoriaController;
 use App\Models\Historia;
 use App\Models\Comentario;
+use App\Http\Livewire\CardShow;
+use App\Http\Livewire\HistoriaIndividual;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,6 +24,7 @@ use App\Models\Comentario;
 |
 */
 
+Route::get('/historia-individual',HistoriaIndividual::class);
 Route::get('/', function () {
     return view('welcome');
 });
@@ -43,11 +46,9 @@ Route::get('/princi', function () {
 Route::get('/historia/{id}', function ($id) {
     // Lógica para obtener la historia correspondiente al ID y pasarla a la vista
     $historia = App\Models\Historia::findOrFail($id);
-
-    return view('livewire.historia-individual', compact('historia'));
+    $comentarios = Comentario::where('historia_id', $id)->get();
+    return view('livewire.historia-individual', compact('historia', 'comentarios'));
 });
-
-
 
 Route::middleware([
     'auth:sanctum',
@@ -95,7 +96,7 @@ Route::middleware([
     'verified'
 ])->group(function () {
     Route::get('/lugares', function () {
-        return view('lugaresE');
+        return view('lugares');
     })->name('lugares');
 });
 

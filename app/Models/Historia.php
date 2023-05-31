@@ -24,7 +24,7 @@ class Historia extends Model
     }
 
     public function comentarios() {
-        return $this->hasMany(Comentario::class,'comentario_id');
+        return $this->hasMany(Comentario::class);
     }
 
       /**
@@ -41,8 +41,7 @@ class Historia extends Model
             'audio',
             'ubicacion_id',
             'categoria_id',
-            'user_id',
-            'comentario_id'    
+            'user_id',    
 
 
    ];
