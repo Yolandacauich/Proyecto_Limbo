@@ -18,8 +18,8 @@
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link href="{{ route('ovnis') }}" :active="request()->routeIs('ovnis')" class="focus:outline-colorter">
-                        {{ __('OVNIS') }}
+                    <x-nav-link href="{{ route('lugares') }}" :active="request()->routeIs('lugares')" class="focus:outline-colorter hover:bg-colorter">
+                        {{ __('LUGARES EMBRUJADOS') }}
                     </x-nav-link>
                 </div>
 
@@ -105,7 +105,7 @@
                                 </button>
                             @else
                                 <span class="inline-flex rounded-md ">
-                                    <button type="button" class="bg-hoverpri focus:bg-hoversec hover:text-white inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white hover:text-hoversec focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition ease-in-out duration-150">
+                                    <button type="button" class="bg-hoverpri focus:bg-hoversec inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white hover:text-hoversec focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition ease-in-out duration-150">
                                         {{ Auth::user()->name }}
 
                                         <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">

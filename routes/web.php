@@ -5,9 +5,10 @@ use App\Http\Controllers\PrinciController;
 use App\Http\Controllers\CreyentesController;
 use App\Http\Controllers\Mapatroller;
 use App\Http\Controllers\OtrosController;
-use App\Http\Controllers\LugaresController;
+use App\Http\Controllers\LugaresEoController;
 use App\Http\Controllers\ParanormalController;
 use App\Http\Controllers\PublicarController;
+use App\Http\Controllers\HistoriaController;
 use App\Models\Historia;
 use App\Models\Comentario;
 /*
@@ -83,9 +84,9 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/lugares', function () {
-        return view('lugares');
-    })->name('lugares');
+    Route::get('/paranormal', function () {
+        return view('paranormal');
+    })->name('paranormal');
 });
 
 Route::middleware([
@@ -93,9 +94,9 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/paranormal', function () {
-        return view('paranormal');
-    })->name('paranormal');
+    Route::get('/lugares', function () {
+        return view('lugaresE');
+    })->name('lugares');
 });
 
 Route::middleware([
@@ -107,3 +108,7 @@ Route::middleware([
         return view('publicar');
     })->name('publicar');
 });
+
+////////ENVIAR FORMULARIO
+Route::get('/publicar/publicarh', 'HistoriaController@showForm')->name('publicar.form');
+Route::post('/publicar/publicarh', 'HistoriaController@store')->name('publicar.store');

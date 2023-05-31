@@ -10,21 +10,21 @@ class Historia extends Model
     use HasFactory;
 
     public function ubicaciones() {
-        return $this->belongsTo(Ubicacion::class,'id_ubicacion');
+        return $this->belongsTo(Ubicacion::class,'ubicacion_id');
     }
 
     
     public function categorias() {
-        return $this->belongsTo(Categoria::class,'id_categoria');
+        return $this->belongsTo(Categoria::class,'categoria_id');
     }
 
     
     public function users() {
-        return $this->belongsTo(User::class,'id_user');
+        return $this->belongsTo(User::class,'user_id');
     }
 
     public function comentarios() {
-        return $this->hasMany(Comentario::class,'id_comentario');
+        return $this->hasMany(Comentario::class,'comentario_id');
     }
 
       /**
@@ -39,10 +39,10 @@ class Historia extends Model
             'image',
             'video',
             'audio',
-            'id_ubicacion',
-            'id_categoria',
-            'id_user',
-            'id_comentario'    
+            'ubicacion_id',
+            'categoria_id',
+            'user_id',
+            'comentario_id'    
 
 
    ];

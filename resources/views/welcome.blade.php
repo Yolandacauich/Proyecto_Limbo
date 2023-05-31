@@ -58,13 +58,12 @@
 <script>
     document.addEventListener('DOMContentLoaded',function(){
         Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
+            title: "¡PARA UNA MEJOR EXPERIENCIA ACTIVE EL AUDIO!",
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
+            confirmButtonColor: '#292929',
+            cancelButtonColor: '#292929',
+            confirmButtonText: 'OKEY!'
             }).then((result) => {
             if (result.isConfirmed) {
                 Swal.fire(
