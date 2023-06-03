@@ -17,16 +17,5 @@ class Comentario extends Model
         return $this->belongsTo(User::class,'user_id');
     }
 
-          /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
-    protected $fillable = [
-        'comentario',
-        'historia_id',
-        'user_id'
-
-
-];
+ 
 }

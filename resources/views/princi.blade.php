@@ -20,7 +20,7 @@
                     @endauth
                 </div>
             @endif
-            <div class="font-jolly items-start text-black pt-32  pl-8 font-jolly text-3xl">
+            <div class="items-start text-black pt-32  pl-8 font-jolly text-3xl">
             <p>MÁS POPULARES...</p>
             </div>  
             <div class="grid grid-cols-3"> 

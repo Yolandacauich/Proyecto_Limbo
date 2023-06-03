@@ -21,6 +21,7 @@ class Historia extends Model
     
     public function users() {
         return $this->belongsTo(User::class,'user_id');
+
     }
 
     public function comentarios() {
@@ -45,4 +46,5 @@ class Historia extends Model
 
 
    ];
+   
 }

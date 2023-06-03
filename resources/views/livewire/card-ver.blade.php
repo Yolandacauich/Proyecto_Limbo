@@ -1,5 +1,6 @@
 <div class="relative grid grid-cols-3 gap-4 p-4">
     @foreach($visiblehistorias as $historia)
+    
     <div class="bg-white/60 shadow-md rounded-lg p-4 min-h-60 space-x-5 border-b-4 border-r-4 border-t border-l border-black rounded-s-2xl rounded-e-2xl px-2 text-justify flex flex-col justify-between">
         <h3 class="text-xl text-center font-Potta">{{ $historia->nombre_historia }}</h3>
         <div class="flex justify-center">

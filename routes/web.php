@@ -10,6 +10,7 @@ use App\Http\Controllers\ParanormalController;
 use App\Http\Controllers\PublicarController;
 use App\Http\Controllers\HistoriaController;
 use App\Models\Historia;
+use Illuminate\Http\Request;
 use App\Models\Comentario;
 use App\Http\Livewire\CardShow;
 use App\Http\Livewire\HistoriaIndividual;
@@ -43,11 +44,10 @@ Route::get('/princi', function () {
     return view('princi');
 });
 
+
 Route::get('/historia/{id}', function ($id) {
-    // Lógica para obtener la historia correspondiente al ID y pasarla a la vista
-    $historia = App\Models\Historia::findOrFail($id);
-    $comentarios = Comentario::where('historia_id', $id)->get();
-    return view('livewire.historia-individual', compact('historia', 'comentarios'));
+    session(['historia_id' => $id]);
+    return view('historia');
 });
 
 Route::middleware([

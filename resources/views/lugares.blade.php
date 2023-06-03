@@ -2,20 +2,22 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <title>LIMBO</title>
+        @livewireStyles
     </head>
     <x-guest-layout>
-    <x-navigation-menu>
+    <x-navigation-menu><!-- NAVEGADOR -->
     </x-navigation-menu>
     <body class="bg bg-cover bg-no-repeat bg-center font-jolly" style="background-image: url('{{asset('images/ovni2.jpg')}}');">
       <div class="animated-text font-jolly items-start text-black pt-14 pl-8 text-3xl">
               <h1>HISTORIAS DE LUGARES EMBRUJADOS...</h1>
       </div> 
-      <livewire:card-ver-e />
+      @livewire('card-ver-e')
         <div class="fixed bottom-4 right-4 flex justify-end pb-8">
-            <a class="underline font-jolly text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-colorter" href="{{ route('publicar') }}">
+            <a class="underline font-jolly text-base text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-colorter" href="{{ route('publicar') }}">
                 {{ __('¿QUIERES PUBLICAR?') }}
             </a>
         </div>
+        @livewireScripts
       </body>
       <audio id="audio-player" autoplay loop controls style="display:none">
       <source src="sounds/audio.mp3" type="audio/mpeg">
@@ -40,7 +42,7 @@
   // Reiniciar el audio después del tiempo máximo especificado
   setTimeout(function() {
     restartAudio();
-  }, maxPlaybackTime * 1000); // Multiplica por 1000 para convertir a milisegundos
+  }, maxPlaybackTime * 1500); // Multiplica por 1000 para convertir a milisegundos
 
   // Evento 'ended' para reiniciar el audio después de terminar la reproducción
   audioPlayer.addEventListener('ended', function() {

@@ -4,6 +4,8 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\Historia;
+use App\Models\Comentario;
+use Illuminate\Support\Facades\Redirect;
 
 class CardVer extends Component
 {
@@ -14,7 +16,7 @@ class CardVer extends Component
 
     public function mount()
     {
-        $this->historias = Historia::all();
+        $this->historias = Historia::where('categoria_id', 1)->get();
         $this->updateVisiblehistorias();
     }
 
@@ -35,10 +37,11 @@ class CardVer extends Component
         $this->visiblehistorias = $this->historias->slice($this->currentIndex, $this->itemsToShow);
     }
 
-    public function irAPaginaHistoria($Idhistoria)
+    public function irAPaginaHistoria($idHistoria)
     {
-        return redirect()->to('/historia/' . $Idhistoria);
+        return Redirect::to('/historia/' . $idHistoria);
     }
+
     public function render()
     {
         return view('livewire.card-ver');

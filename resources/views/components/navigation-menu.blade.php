@@ -6,11 +6,18 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <img src="{{'images/boceto1 1.png' }}" alt="Imagen" >
+                        <img src="{{'images/boceto1 1.png' }}" alt=" " >
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
+
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')" class="focus:outline-colorter hover:bg-colorter">
+                        {{ __('POPULARES') }}
+                    </x-nav-link>
+                </div>
+                
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link href="{{ route('paranormal') }}" :active="request()->routeIs('paranormal')" class="focus:outline-colorter">
                         {{ __('PARANORMAL') }}

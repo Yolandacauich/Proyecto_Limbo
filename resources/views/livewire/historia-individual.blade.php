@@ -1,20 +1,14 @@
-<x-app-layout>
-<div>
-<div>
-    <h2>{{ $historia->nombre_historia }}</h2>
-    <p>{{ $historia->historia }}</p>
-    <!-- Agrega aquí el resto de los detalles que deseas mostrar -->
+<div class="bg bg-cover bg-center bg-no-repeat  font-jolly"
+    style="background-image: url('{{ asset('images/fondoniebla.jpg') }}');">
+    <h1 class='font-Potta text-center  items-start text-black text-3xl'>{{ $historia->nombre_historia }}</h1><br>
+    <div class="flex justify-center">
+        <img src="data:image/png;base64,{{ base64_encode($historia->image) }}" alt=" "
+            style="width: 300px; height: 200px;">
+    </div><br>
+    <p class='font-jolly text-justify mx-8 txt'>{{ $historia->historia }}</p> <br>
+    
+    <input type="text" wire:model="comentario">
+    <button wire:click="agregarComentario">enviar</button>
 </div>
-<h3>Comentarios</h3>
-    @foreach ($historia->comentarios as $comentario)
-        <div>
-            <p>Autor: {{ $comentario->users->name ?? 'usuario desconocido' }}</p>
-            <p>{{ $comentario->comentario }}</p>
-        </div>
-    @endforeach
 
-    <input type="text" wire:model="miComentario">
-    <button wire:click="agregarComentario">Enviar</button>
-
-</div>
-</x-app-layout>
+    <!-- VISTA DE LA HISTORIA -->

@@ -5,41 +5,34 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use App\Models\Historia;
 use App\Models\Comentario;
+use Illuminate\Http\Request;
+
 class HistoriaIndividual extends Component
 {
-    public $miComentario;
+    public $historia;
+    public $comentario;
     public $historiaId;
+
+    public function mount($historiaId)
+    {
+        $this->historiaId = $historiaId;
+        $this->historia=Historia::find($historiaId);
+    }
 
     public function render()
     {
         return view('livewire.historia-individual');
     }
-    
-    public function mostrarHistoria($id)
-    {
-        $this->historiaId=$id;
-        $historia = Historia::findOrFail($id);
-        $comentarios = $historia->comentarios; 
 
-        return view('livewire.historia-individual', compact('historia', 'comentarios'));
-    }
     public function agregarComentario()
-{
+    {
+        $comentario = new Comentario();
+        $comentario->comentario = $this->comentario;
+        $comentario->historia_id = $this->historia->id;
+        $comentario->user_id = auth()->user()->id;
+        $comentario->save();
 
 
-    // Crea un nuevo comentario y asigna los valores
-    $comentario = new Comentario();
-    $comentario->comentario = $this->miComentario;
-    $comentario->historia_id = $historiaId;
-    $comentario->user_id = auth()->user()->id; // Asigna el ID del usuario actual, si tienes autenticación
-
-    $comentario->save();
-
-    // Limpia el campo de comentario después de guardar
-    $this->miComentario = '';
-
-    // Opcionalmente, puedes mostrar un mensaje de éxito o redirigir a otra página
-    session()->flash('success', 'Comentario guardado exitosamente.');
-}
-
+        $this->comentario = '';
+    }
 }

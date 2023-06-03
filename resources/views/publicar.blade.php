@@ -4,7 +4,7 @@
         <title>LIMBO</title>
     </head>
     <x-guest-layout>
-    <x-navigation-menu>
+    <x-navigation-menu><!-- NAVEGADOR -->
     </x-navigation-menu>
     <div class="animated-text font-jolly items-start text-black pt-14 pl-8 text-3xl">
             <h1>CUENTANOS TU HISTORIA...</h1>
