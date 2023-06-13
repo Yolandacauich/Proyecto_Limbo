@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PrinciController;
+<<<<<<< HEAD
+
+=======
 use App\Http\Controllers\CreyentesController;
 use App\Http\Controllers\Mapatroller;
 use App\Http\Controllers\OtrosController;
@@ -14,6 +17,7 @@ use Illuminate\Http\Request;
 use App\Models\Comentario;
 use App\Http\Livewire\CardShow;
 use App\Http\Livewire\HistoriaIndividual;
+>>>>>>> f314111f87a661e2184efbb763f53be1b13320aa
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,11 +43,16 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+<<<<<<< HEAD
+=======
 
+>>>>>>> f314111f87a661e2184efbb763f53be1b13320aa
 Route::get('/princi', function () {
     return view('princi');
 });
 
+<<<<<<< HEAD
+=======
 
 Route::get('/historia/{id}', function ($id) {
     session(['historia_id' => $id]);
@@ -113,3 +122,4 @@ Route::middleware([
 ////////ENVIAR FORMULARIO
 Route::get('/publicar/publicarh', 'HistoriaController@showForm')->name('publicar.form');
 Route::post('/publicar/publicarh', 'HistoriaController@store')->name('publicar.store');
+>>>>>>> f314111f87a661e2184efbb763f53be1b13320aa

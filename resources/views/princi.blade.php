@@ -1,4 +1,21 @@
 @vite(['resources/css/app.css', 'resources/js/app.js'])
+<<<<<<< HEAD
+<x-guest-layout>
+    <title>LIMBO</title>
+
+    <div class="font-jolly items-start text-black pt-32  pl-8 font-jolly text-3xl">
+        <p>MÁS POPULARES...</p>
+    </div>  
+    <div class="grid grid-cols-3"> 
+    <div>01</div>
+    <div>01</div>
+    <div>01</div>
+
+    </div> 
+
+</x-guest-layout>
+
+=======
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -32,6 +49,7 @@
 
 </x-guest-layout>
 </html>
+>>>>>>> f314111f87a661e2184efbb763f53be1b13320aa
 
 
 
