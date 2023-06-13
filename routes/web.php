@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PrinciController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,7 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+Route::get('/princi', function () {
+    return view('princi');
+});
+
