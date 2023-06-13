@@ -5,9 +5,18 @@ use App\Http\Controllers\PrinciController;
 use App\Http\Controllers\CreyentesController;
 use App\Http\Controllers\Mapatroller;
 use App\Http\Controllers\OtrosController;
-use App\Http\Controllers\OvnisController;
+use App\Http\Controllers\LugaresEoController;
 use App\Http\Controllers\ParanormalController;
 use App\Http\Controllers\PublicarController;
+use App\Http\Controllers\HistoriaController;
+use App\Models\Historia;
+use Illuminate\Http\Request;
+use App\Models\Comentario;
+use App\Http\Livewire\CardShow;
+//use App\Http\Livewire\PublicarHistoria;
+use App\Http\Livewire\HistoriaIndividual;
+//use App\Http\Livewire\VerComentarios;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,6 +28,9 @@ use App\Http\Controllers\PublicarController;
 |
 */
 
+//Route::get("/publicarhistoria", PublicarHistoria::class);
+
+Route::get('/historia-individual', HistoriaIndividual::class);
 Route::get('/', function () {
     return view('welcome');
 });
@@ -35,6 +47,12 @@ Route::middleware([
 
 Route::get('/princi', function () {
     return view('princi');
+});
+//Route::get('/historia/{id}/comentarios', VerComentarios::class)->name('ver-comentarios');
+
+Route::get('/historia/{id}', function ($id) {
+    session(['historia_id' => $id]);
+    return view('historia');
 });
 
 Route::middleware([
@@ -72,9 +90,9 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/ovnis', function () {
-        return view('ovnis');
-    })->name('ovnis');
+    Route::get('/paranormal', function () {
+        return view('paranormal');
+    })->name('paranormal');
 });
 
 Route::middleware([
@@ -82,9 +100,9 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/paranormal', function () {
-        return view('paranormal');
-    })->name('paranormal');
+    Route::get('/lugares', function () {
+        return view('lugares');
+    })->name('lugares');
 });
 
 Route::middleware([
@@ -96,3 +114,7 @@ Route::middleware([
         return view('publicar');
     })->name('publicar');
 });
+
+////////ENVIAR FORMULARIO
+Route::get('/publicar/publicarh', 'HistoriaController@showForm')->name('publicar.form');
+Route::post('/publicar/publicarh', 'HistoriaController@store')->name('publicar.store');

@@ -18,6 +18,11 @@
     }
   }
   
-  .animated-text {
+.animated-text {
     animation: bounce 1s infinite;
+  }
+  
+  .icon-success::before {
+    content: '\2713'; /* Código unicode del icono de check */
+    color: green; /* Cambia el color del icono */
   }
